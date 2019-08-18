@@ -1,10 +1,10 @@
-import { Entity, Column, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Entity, Column, ManyToOne, PrimaryColumn, BaseEntity } from 'typeorm';
 import { User } from './User';
 
 @Entity()
-export class Message {
+export class Message extends BaseEntity {
   @PrimaryColumn()
-  id: number;
+  id: string;
 
   @Column()
   userId: string;

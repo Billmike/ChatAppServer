@@ -12,22 +12,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const Message_1 = require("./Message");
 const Chat_1 = require("./Chat");
-let User = class User {
+let User = class User extends typeorm_1.BaseEntity {
 };
 __decorate([
     typeorm_1.PrimaryColumn(),
-    __metadata("design:type", Number)
-], User.prototype, "id", void 0);
-__decorate([
-    typeorm_1.Column(),
     __metadata("design:type", String)
-], User.prototype, "userId", void 0);
+], User.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], User.prototype, "username", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column("text"),
     __metadata("design:type", String)
 ], User.prototype, "phoneNumber", void 0);
 __decorate([

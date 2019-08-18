@@ -1,10 +1,10 @@
-import { Entity, Column, PrimaryColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryColumn, ManyToMany, JoinTable, BaseEntity } from 'typeorm';
 import { User } from './User';
 
 @Entity()
-export class Chat {
+export class Chat extends BaseEntity {
   @PrimaryColumn()
-  id: number;
+  id: string;
 
   @Column()
   chatId: string;

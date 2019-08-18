@@ -1,19 +1,16 @@
-import { Entity, Column, OneToMany, PrimaryColumn, ManyToMany } from 'typeorm';
+import { Entity, Column, OneToMany, PrimaryColumn, ManyToMany, BaseEntity } from 'typeorm';
 import { Message } from './Message';
 import { Chat } from './Chat'
 
 @Entity()
-export class User {
+export class User extends BaseEntity {
   @PrimaryColumn()
-  id: number;
-
-  @Column()
-  userId: string;
+  id: string;
 
   @Column()
   username: string;
 
-  @Column()
+  @Column("text")
   phoneNumber: string;
 
   @OneToMany(type => Message, message => message.user)
