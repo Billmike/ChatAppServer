@@ -1,15 +1,18 @@
 import express from 'express';
 import "reflect-metadata";
+import dotenv from 'dotenv';
 import { createConnection } from 'typeorm';
 import { User, Chat, Message } from './entity';
+
+dotenv.config();
 
 createConnection({
   type: 'postgres',
   host: 'localhost',
   port: 5432,
-  username: 'postgres',
-  password: 'Rocketmail',
-  database: 'chats_db',
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   entities: [
     User,
     Chat,

@@ -5,15 +5,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 require("reflect-metadata");
+const dotenv_1 = __importDefault(require("dotenv"));
 const typeorm_1 = require("typeorm");
 const entity_1 = require("./entity");
+dotenv_1.default.config();
 typeorm_1.createConnection({
     type: 'postgres',
     host: 'localhost',
     port: 5432,
-    username: 'postgres',
-    password: 'Rocketmail',
-    database: 'chats_db',
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     entities: [
         entity_1.User,
         entity_1.Chat,
