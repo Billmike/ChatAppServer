@@ -5,10 +5,19 @@
     ],
     "jsRules": {},
     "rules": {
-			"no-console": false,
-			"max-line-length": {
-				"options": [120]
-			}
+        "no-console": false,
+        "max-line-length": {
+          "options": [120]
+				},
+				"ordered-imports": true,
+				"semi-colon": [
+					true,
+					"always"
+				],
+				"trailing-comma": [
+					true,
+					"always"
+				]
     },
     "rulesDirectory": []
 }
