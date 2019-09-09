@@ -51,6 +51,22 @@ export class UserController {
       handleErrorGraciously();
     }
   }
+
+  static async getRegisteredContacts(request, response) {
+    try {
+      const { phoneNumbers } = request.body;
+      const existingContacts = await User.find({
+        where: phoneNumbers
+      });
+      
+      return response.status(200).json({
+        success: true,
+        existingContacts
+      })
+    } catch (error) {
+      handleErrorGraciously();
+    }
+  }
 }
 
 export const validate = method => {

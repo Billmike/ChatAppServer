@@ -27,5 +27,9 @@ router.get('/message/:chatId', controllers_1.MessageController.fetchChatMessage)
  * Endpoint to create the new chat session
  */
 router.post('/chat', controllers_1.ChatController.createChatRoom);
+/**
+ * Endpoint to get all contacts
+ */
+router.get('/contacts', User_1.UserController.getRegisteredContacts);
 exports.default = router;
 //# sourceMappingURL=index.js.map

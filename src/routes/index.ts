@@ -33,4 +33,9 @@ router.get('/message/:chatId', MessageController.fetchChatMessage)
  */
 router.post('/chat', ChatController.createChatRoom);
 
+/**
+ * Endpoint to get all contacts
+ */
+router.get('/contacts', UserController.getRegisteredContacts);
+
 export default router;

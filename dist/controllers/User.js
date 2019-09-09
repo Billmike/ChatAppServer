@@ -58,6 +58,23 @@ class UserController {
             }
         });
     }
+    static getRegisteredContacts(request, response) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { phoneNumbers } = request.body;
+                const existingContacts = yield entity_1.User.find({
+                    where: phoneNumbers
+                });
+                return response.status(200).json({
+                    success: true,
+                    existingContacts
+                });
+            }
+            catch (error) {
+                console.log('caught error', error);
+            }
+        });
+    }
 }
 exports.UserController = UserController;
 exports.validate = method => {
